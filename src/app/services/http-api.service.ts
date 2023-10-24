@@ -10,7 +10,7 @@ import { responseStandings, responseFixtures } from '../mock/standings.mock';
 export class HttpApiService {
 
   private apiUrl = 'https://v3.football.api-sports.io';
-  private cache: boolean = true;
+  private cache: boolean = false;
   private responseStandingsCache = responseStandings;
   private responseCacheFixtures = responseFixtures;
   constructor(private http: HttpClient) { }
