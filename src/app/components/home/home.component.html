@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center vh-100 ">
+  <div class="container text-center">
+    <div class="row">
+      <h4 class="text-center mb-4">FOOTBALL UPDATES</h4>
+      <div class="p-4 text-center">
+        <nav aria-label="...">
+          <ul class="justify-content-center pagination pagination-lg">
+            <li class="page-item" *ngFor="let league of leagues">
+              <a id="{{league.country}}Select" class="page-link" routerLinkActive="active" [routerLink]="['/standings/'+ league.id]">{{league.country}}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <ng-container class="p-4" *ngIf="standings && standings.length > 0">
+        <app-standings [standings]="standings"></app-standings>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
